@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Friz Quadrata Std';
+    src: url('FrizQuadrataStd.woff2') format('woff2'),
+        url('FrizQuadrataStd.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+  background-color: #000;
+}
+
+#queue {
+  position: fixed;
+  background-image: url(notice.png);
+  top: 50%;
+  left: 50%;
+  margin-top: -95px;
+  margin-left: -358px;
+  width: 716px;
+  height: 189px;
+  font-family: 'Friz Quadrata Std';
+  font-weight: 500;
+  font-style: normal;
+  color: #e6c147;
+}
+
+#frost {
+	position: relative;
+	top: 13px;
+	background-color: #000;
+	opacity: 0.5;
+	left: 9px;
+	width: 697px;
+	height: 173px;
+	filter: blur(10px);
+}
+
+#content {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	text-align: center;
+	width: 673px;
+	height: 150px;
+    font-size: 23px;
+    text-shadow: 0px 0px 1px #000, 0px 0px 2px #000, 0px 0px 3px #000, 0px 0px 4px #000, 0px 0px 5px #000, 0px 0px 6px #000, 0px 0px 7px #000, 0px 0px 8px #000;
+}
+
+#data {
+	text-align: left;
+	margin: auto;
+}
+
+.wow {
+  position: relative;
+  top: 44px;
+  left: 420px;
+  width: 250px;
+  font-size: 23px;
+  text-shadow: 0px 0px 1px #000, 0px 0px 2px #000, 0px 0px 3px #000, 0px 0px 4px #000, 0px 0px 5px #000, 0px 0px 6px #000, 0px 0px 7px #000, 0px 0px 8px #000;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#button {
+  margin-top: 10px;
+  box-shadow: 0px 0px 16px 4px #000;
+  cursor: pointer;
+}
+
+#speaker {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0.3;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#speaker:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+#speaker span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin: 11px 0 0 2px;
+}
+
+#speaker span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  border-width: 10px 14px 10px 15px;
+  left: -13px;
+  top: 5px;
+}
+
+#speaker span:before {
+  transform: rotate(45deg);
+  border-radius: 0 50px 0 0;
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-style: double;
+  border-color: #fff;
+  border-width: 7px 7px 0 0;
+  left: 18px;
+  top: 9px;
+  transition: all 0.2s ease-out;
+}
+
+#speaker:hover span:before {
+  transform: scale(0.8) translate(-3px, 0) rotate(42deg);
+}
+
+#speaker.mute span:before {
+  transform: scale(0.5) translate(-15px, 0) rotate(36deg);
+  opacity: 0;
+}
+

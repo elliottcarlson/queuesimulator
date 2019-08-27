@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, noarchive">
+    <meta name="format-detection" content="telephone=no">
+    <title>Queue Simulator 2019</title>
+    <link href="stylesheet.css" rel="stylesheet">
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			document.getElementById('speaker').onclick = function(e){
+				var video=document.getElementById("bg")
+
+				if(video.muted){
+					video.muted = false;
+				} else {
+					video.muted = true;
+				}
+			}
+
+			document.getElementById('button').onclick = function(e){
+				var video = document.getElementById("bg")
+				var source = document.getElementById("vid")
+				video.pause();
+				video.muted = false;
+			    source.src = 'alt.mp4'; 
+			    video.load();
+			    video.play();
+			}
+
+			setInterval(function(){
+				document.getElementById("position").innerHTML = randomize(17500, 35000);
+				document.getElementById("estimated").innerHTML = randomize(58, 800) + " min";
+			}, 3000);
+		});
+
+		function randomize(min, max) {
+			return Math.floor(min + Math.random()*(max + 1 - min))
+		}
+
+		function toggleMute() {
+			var video=document.getElementById("bg")
+
+			if(video.muted){
+				video.muted = false;
+			} else {
+				video.muted = true;
+			}
+		}
+	</script>
+</head>
+<body>
+  <div class="fullscreen-bg">
+    <video id="bg" loop muted autoplay poster="bg.jpg" class="fullscreen-bg__video">
+      <source id="vid" src="bg.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div id="queue">
+    <div id="frost"></div>
+	<div id="content">
+		Realm is Full<br />
+		<table id="data">
+		  <tr>
+		    <td width="180">
+              Position in queue:
+			</td>
+		    <td width="90" id="position">
+              65000
+			</td>
+		  </tr>
+		  <tr>
+		    <td>
+              Estimated time:
+			</td>
+		    <td id="estimated">
+              123 min
+			</td>
+		  </tr>
+		</table>
+		<img id="button" src="button.png">
+	</div>
+	<a href="#" id="speaker">
+	<span></span>
+	</a>
+  </div>
+</body>
+</html>
